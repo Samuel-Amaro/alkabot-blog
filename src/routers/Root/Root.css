@@ -1,0 +1,11 @@
+.main{
+    padding: 0 1.5rem;
+}
+
+.main__line-diviser{
+    display: block;
+    border: 0;
+    height: 1px;
+    background-color: #dee2e6;
+    margin: 1.5rem 0;
+}

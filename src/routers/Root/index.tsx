@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import Navbar from "../../components/Navbar";
 import Header from "../../components/Header";
 import Post from "../../components/Post";
+import "./Root.css";
 
 export async function loader() {
   const allPosts = await getAllPosts();
@@ -22,11 +23,18 @@ export default function Root() {
   return (
     <>
       <Navbar />
-      <hr className="line-diviser" />
       <Header />
       <main className="main">
         <div className="main__container">
           {datas.map((dp, index) => {
+            if(datas.length - 1 > index) {
+                return (
+                  <>
+                    <Post post={dp} key={index} />
+                    <hr className="main__line-diviser" />
+                  </>
+                );
+            }
             return <Post post={dp} key={index} />;
           })}
         </div>

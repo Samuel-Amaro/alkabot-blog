@@ -1,0 +1,15 @@
+.header {
+  position: relative;
+  padding: 3.5rem 0;
+}
+
+.header__content {
+  text-align: center;
+  padding: 0 20px;
+}
+
+.header__title {
+  font-size: 3rem;
+  color: #212529;
+  margin: 0 0 15px 0;
+}

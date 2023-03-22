@@ -1,0 +1,22 @@
+.post__title{
+    font-size: 1.8rem;
+    line-height: 1.2;
+    margin: 0 0 5px 0;
+}
+
+.post__preview-content{
+    font-size: 1.1rem;
+    line-height: 1.3;
+    margin: 0 0 10px;
+}
+
+.post__show-comments{
+    display: block;
+    appearance: none;
+    border: none;
+    background-color: #24292F;
+    color: #ffffff;
+    padding: 0.7rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
