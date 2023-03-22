@@ -1,11 +1,12 @@
 import { useLoaderData } from "react-router-dom";
 import { getAllPosts } from "../../api/api";
 import { DataPost } from "../../data";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import Navbar from "../../components/Navbar";
 import Header from "../../components/Header";
 import Post from "../../components/Post";
 import "./Root.css";
+import LineDiviser from "../../components/LineDiviser";
 
 export async function loader() {
   const allPosts = await getAllPosts();
@@ -29,10 +30,10 @@ export default function Root() {
           {datas.map((dp, index) => {
             if(datas.length - 1 > index) {
                 return (
-                  <>
+                  <React.Fragment key={index}>
                     <Post post={dp} key={index} />
-                    <hr className="main__line-diviser" />
-                  </>
+                    <LineDiviser />
+                  </React.Fragment>
                 );
             }
             return <Post post={dp} key={index} />;

@@ -1,8 +1,9 @@
 import { DataComment, DataPost } from "../../data";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { getAllCommentsPost } from "../../api/api";
 import Comment from "../Comment";
 import "./Post.css";
+import LineDiviser from "../LineDiviser";
 
 type PropsPostPreview = {
   post: DataPost;
@@ -39,7 +40,7 @@ export default function Post({ post }: PropsPostPreview) {
         <div className="post__metadatas"></div>
         <button
           type="button"
-          className="post__show-comments"
+          className="post__btn-comments"
           aria-label={`${expanded ? "Hidden" : "Show"} comments`}
           title={`${expanded ? "Hidden" : "Show"} comments`}
           aria-expanded={expanded}
@@ -57,10 +58,19 @@ export default function Post({ post }: PropsPostPreview) {
         </button>
         {expanded && (
           <div className="post__comments" id="comments-post">
+            <h2 className="post__marck">Comments</h2>
             {isLoadingComments ? (
               <p className="post__loading">Loading comments...</p>
             ) : commentsPost.length > 0 ? (
-              commentsPost.map((c) => {
+              commentsPost.map((c, index) => {
+                if(commentsPost.length - 1 > index) {
+                  return (
+                    <React.Fragment key={index}>
+                      <Comment comment={c} key={c.id} />
+                      <LineDiviser />
+                    </React.Fragment>
+                  );
+                }
                 return <Comment comment={c} key={c.id} />;
               })
             ) : (

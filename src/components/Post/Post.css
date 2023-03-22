@@ -2,6 +2,7 @@
     font-size: 1.8rem;
     line-height: 1.2;
     margin: 0 0 5px 0;
+    color: #343A40;
 }
 
 .post__preview-content{
@@ -10,13 +11,28 @@
     margin: 0 0 10px;
 }
 
-.post__show-comments{
+.post__btn-comments{
     display: block;
     appearance: none;
-    border: none;
+    border: 1px solid transparent;
     background-color: #24292F;
     color: #ffffff;
     padding: 0.7rem 1rem;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.post__btn-comments:hover, .post__btn-comments:focus{
+    background-color: transparent;
+    border: 1px solid #24292F;
+    color: #24292F;
+}
+
+.post__comments{
+    padding: 1rem 0.5rem 0px 0.5rem;
+}
+
+.post__marck{
+    font-size: 1.6rem;
+    margin: 0 0 1rem 0;
 }
