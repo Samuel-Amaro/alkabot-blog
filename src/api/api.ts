@@ -1,4 +1,6 @@
-import { DataPost } from "../data";
+import { DataComment, DataPost } from "../data";
+
+const BASE_URL = "https://jsonplaceholder.typicode.com";
 
 export async function fetchDatas<DataType>(url: string) : Promise<DataType | null> {
     try {
@@ -15,7 +17,13 @@ export async function fetchDatas<DataType>(url: string) : Promise<DataType | nul
 }
 
 export async function getAllPosts() {
-    const url = "https://jsonplaceholder.typicode.com/posts";
+    const url = BASE_URL + "/posts";
     const data = await fetchDatas<DataPost[]>(url);
+    return data ? data : [];
+}
+
+export async function getAllCommentsPost(idPost: number) {
+    const url = `${BASE_URL}/posts/${idPost}/comments`;
+    const data = await fetchDatas<DataComment[]>(url);
     return data ? data : [];
 }
