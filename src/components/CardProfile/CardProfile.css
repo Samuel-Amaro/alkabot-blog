@@ -1,0 +1,104 @@
+.cardprofile {
+  box-shadow: 2px 2px 14px 0.5px rgba(0, 0, 0, 0.2);
+  padding: 1.2rem 1rem;
+  width: 230px;
+  border-radius: 8px;
+}
+
+.cardprofile__icon-profile {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.cardprofile__profile-img {
+  width: 80px;
+  height: 80px;
+  background-color: #ece3d0;
+  border-radius: 50%;
+  margin: 0 auto 1rem auto;
+}
+
+.cardprofile__name {
+  font-weight: 500;
+  font-size: 1.1rem;
+  text-align: center;
+  margin: 0 0 0.5rem 0;
+  color: #212529;
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.cardprofile__username-link {
+  display: block;
+  width: min-content;
+  margin: 0 auto 1.3rem auto;
+  text-decoration: none;
+  text-align: center;
+  background-color: #ddf4ff;
+  color: #097fe5;
+  font-size: 0.85rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+}
+
+.cardprofile__username-link:hover,
+.cardprofile__username-link:focus {
+  text-decoration: underline;
+}
+
+.cardprofile__icon-location,
+.cardprofile__text-location {
+  display: block;
+}
+
+.cardprofile__icon-location {
+  width: 16px;
+  height: 16px;
+}
+
+.cardprofile__text-location {
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.cardprofile__location {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 5px;
+  align-items: center;
+  margin: 0 0 1.2rem 0;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.cardprofile__contacts {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.cardprofile__link {
+  display: block;
+  text-decoration: none;
+}
+
+.cardprofile__icon-link {
+  display: block;
+  width: 25px;
+  height: 25px;
+}
+
+.cardprofile__link:hover .cardprofile__icon-link, .cardprofile__icon-link:focus .cardprofile__icon-link{
+    fill: #3E77FF;
+}
+

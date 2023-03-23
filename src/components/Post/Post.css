@@ -40,7 +40,10 @@
 }
 
 .post__btn-comments {
-  display: block;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 8px;
   appearance: none;
   border: 1px solid transparent;
   background-color: #24292f;
@@ -51,11 +54,27 @@
   font-weight: 400;
 }
 
+.post__btn-comment-text,
+.post__btn-comment-icon {
+  display: block;
+}
+
+.post__btn-comment-icon {
+  width: 16px;
+  height: 16px;
+  fill: #ffffff;
+}
+
 .post__btn-comments:hover,
 .post__btn-comments:focus {
   background-color: transparent;
   border: 1px solid #24292f;
   color: #24292f;
+}
+
+.post__btn-comments:hover .post__btn-comment-icon,
+.post__btn-comments:focus .post__btn-comment-icon {
+  fill: #24292f;
 }
 
 .post__comments {

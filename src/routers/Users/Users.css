@@ -1,0 +1,11 @@
+.wrapper__users {
+  padding: 0 1rem;
+}
+
+.wrapper__list-users{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+}

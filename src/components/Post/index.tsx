@@ -5,6 +5,7 @@ import Comment from "../Comment";
 import "./Post.css";
 import LineDiviser from "../LineDiviser";
 import { Link } from "react-router-dom";
+import IconComment from "../Icons/Comment";
 
 type PropsPostPreview = {
   post: DataPost;
@@ -54,7 +55,16 @@ export default function Post({ post, user }: PropsPostPreview) {
         {user && (
           <div className="post__metadatas">
             <p className="post__posted">
-              Posted by <Link to={`/users/${user.id}`} target="_self" rel="next" aria-label="View user" className="post__link-user">{user.username}</Link>
+              Posted by{" "}
+              <Link
+                to={`/users/${user.id}`}
+                target="_self"
+                rel="next"
+                aria-label="View user"
+                className="post__link-user"
+              >
+                {user.username}
+              </Link>
             </p>
           </div>
         )}
@@ -74,7 +84,10 @@ export default function Post({ post, user }: PropsPostPreview) {
             }
           }}
         >
-          {expanded ? "Hidden" : "Show"} comments
+          <span className="post__btn-comment-text">
+            {expanded ? "Hidden" : "Show"} comments
+          </span>
+          <IconComment className="post__btn-comment-icon" />
         </button>
         {expanded && (
           <div className="post__comments" id="comments-post">

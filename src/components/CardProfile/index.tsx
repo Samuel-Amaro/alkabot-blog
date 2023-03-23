@@ -4,6 +4,8 @@ import Globe from "../Icons/Globe";
 import Email from "../Icons/Email";
 import Phone from "../Icons/Phone";
 import LocationDot from "../Icons/LocationDot";
+import "./CardProfile.css";
+import Profile from "../Icons/Profile";
 
 type PropsCardProfile = {
   user: DataUser;
@@ -12,7 +14,9 @@ type PropsCardProfile = {
 export default function CardProfile({ user }: PropsCardProfile) {
   return (
     <div className="cardprofile">
-      <div className="cardprofile__profile-img"></div>
+      <div className="cardprofile__profile-img">
+        <Profile className="cardprofile__icon-profile" />
+      </div>
       <p className="cardprofile__name">{user.name}</p>
       <Link
         to={`/users/${user.id}`}
@@ -23,7 +27,10 @@ export default function CardProfile({ user }: PropsCardProfile) {
       >
         @{user.username}
       </Link>
-      <p className="cardprofile__location"><LocationDot /> {user.address.city}</p>
+      <p className="cardprofile__location">
+        <LocationDot className="cardprofile__icon-location" />{" "}
+        <span className="cardprofile__text-location">{user.address.city}</span>
+      </p>
       <div className="cardprofile__contacts">
         <a
           href={user.website}

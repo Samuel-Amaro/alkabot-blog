@@ -4,6 +4,7 @@ import { DataUser } from "../../data";
 import Navbar from "../../components/Navbar";
 import Header from "../../components/Header";
 import CardProfile from "../../components/CardProfile";
+import "./Users.css";
 
 export async function loader() {
   const allUsers = await getAllUsers();
