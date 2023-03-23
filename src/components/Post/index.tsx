@@ -1,21 +1,35 @@
-import { DataComment, DataPost } from "../../data";
+import { DataComment, DataPost, DataUser } from "../../data";
 import React, { useEffect, useState } from "react";
-import { getAllCommentsPost } from "../../api/api";
+import { getAllCommentsPost, getUser } from "../../api/api";
 import Comment from "../Comment";
 import "./Post.css";
 import LineDiviser from "../LineDiviser";
+import { Link } from "react-router-dom";
 
 type PropsPostPreview = {
   post: DataPost;
+  user: DataUser;
 };
 
-export default function Post({ post }: PropsPostPreview) {
+export default function Post({ post, user }: PropsPostPreview) {
   const [expanded, setExpanded] = useState(false);
   const [commentsPost, setCommentsPost] = useState<DataComment[]>([]);
   const [isLoadingComments, setIsLoadingComments] = useState(false);
+  //const [user, setUser] = useState<DataUser | null>(null);
+
+  /*useEffect(() => {
+    //busca dados do usuario que fez o post
+    getUser(post.userId)
+      .then((value) => {
+        setUser(value);
+      })
+      .catch((error) => {
+        console.error("error ao buscar dados do usuario do post " + error);
+      });
+  }, [post.userId]);
+  */
 
   useEffect(() => {
-    //busca dados do usuario que fez o post
     setIsLoadingComments(true);
     //busca comentarios do post somente quando for necessario
     if (expanded) {
@@ -37,7 +51,13 @@ export default function Post({ post }: PropsPostPreview) {
           <h2 className="post__title">{post.title}</h2>
           <p className="post__preview-content">{post.body}</p>
         </article>
-        <div className="post__metadatas"></div>
+        {user && (
+          <div className="post__metadatas">
+            <p className="post__posted">
+              Posted by <Link to={`/users/${user.id}`} target="_self" rel="next" aria-label="View user" className="post__link-user">{user.username}</Link>
+            </p>
+          </div>
+        )}
         <button
           type="button"
           className="post__btn-comments"
@@ -63,7 +83,7 @@ export default function Post({ post }: PropsPostPreview) {
               <p className="post__loading">Loading comments...</p>
             ) : commentsPost.length > 0 ? (
               commentsPost.map((c, index) => {
-                if(commentsPost.length - 1 > index) {
+                if (commentsPost.length - 1 > index) {
                   return (
                     <React.Fragment key={index}>
                       <Comment comment={c} key={c.id} />

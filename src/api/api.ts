@@ -1,4 +1,4 @@
-import { DataComment, DataPost } from "../data";
+import { DataComment, DataPost, DataUser } from "../data";
 
 const BASE_URL = "https://jsonplaceholder.typicode.com";
 
@@ -25,5 +25,17 @@ export async function getAllPosts() {
 export async function getAllCommentsPost(idPost: number) {
     const url = `${BASE_URL}/posts/${idPost}/comments`;
     const data = await fetchDatas<DataComment[]>(url);
+    return data ? data : [];
+}
+
+export async function getUser(idUser: number) {
+    const url = `${BASE_URL}/users/${idUser}`;
+    const data = await fetchDatas<DataUser>(url);
+    return data ? data : null;
+}
+
+export async function getAllUsers() {
+    const url = `${BASE_URL}/users`;
+    const data = await fetchDatas<DataUser[]>(url);
     return data ? data : [];
 }
