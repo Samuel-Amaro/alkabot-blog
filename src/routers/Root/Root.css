@@ -1,3 +1,10 @@
 .main{
     padding: 0 1.5rem;
 }
+
+@media screen and (min-width: 376px) {
+    .main{
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+}

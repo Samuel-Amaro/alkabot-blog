@@ -15,12 +15,6 @@ export async function loader() {
 
 export default function Root() {
   const datas = useLoaderData() as DataPost[];
-  /*useEffect(() => {
-    datas.forEach((dp) => {
-      console.log(dp);
-    });
-  }, []);
-  */
   return (
     <>
       <Navbar />
@@ -28,13 +22,13 @@ export default function Root() {
       <main className="main">
         <div className="main__container">
           {datas.map((dp, index) => {
-            if(datas.length - 1 > index) {
-                return (
-                  <React.Fragment key={index}>
-                    <Post post={dp} key={index} />
-                    <LineDiviser />
-                  </React.Fragment>
-                );
+            if (datas.length - 1 > index) {
+              return (
+                <React.Fragment key={index}>
+                  <Post post={dp} key={index} />
+                  <LineDiviser />
+                </React.Fragment>
+              );
             }
             return <Post post={dp} key={index} />;
           })}
