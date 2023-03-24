@@ -1,0 +1,42 @@
+.wrapper__main {
+  padding: 0 1.5rem 1rem 1.5rem;
+}
+
+.wrapper__table-datas-user {
+  width: auto;
+  margin: 0 auto 1.8rem auto;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+  /*border-radius: 8px;*/
+}
+
+.wrapper__table-row:not(:last-child) {
+    border-bottom: 1px solid #ddd;
+}
+
+.wrapper__table-header,
+.wrapper__table-data {
+  text-align: left;
+  padding: 8px;
+}
+
+.wrapper__table-header {
+  border-right: 1px solid #ddd;
+  background-color: #f2f2f2;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #24292f;
+}
+
+.wrapper__table-data {
+  font-size: 0.95rem;
+  font-weight: 400;
+}
+
+.wrapper__subtitle {
+  font-size: 1.8rem;
+  text-align: center;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 15px 0;
+}
