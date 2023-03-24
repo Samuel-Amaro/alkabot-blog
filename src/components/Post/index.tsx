@@ -1,6 +1,6 @@
 import { DataComment, DataPost, DataUser } from "../../data";
 import React, { useEffect, useState } from "react";
-import { getAllCommentsPost, getUser } from "../../api/api";
+import { getAllCommentsPost} from "../../api/api";
 import Comment from "../Comment";
 import "./Post.css";
 import LineDiviser from "../LineDiviser";
@@ -9,26 +9,13 @@ import IconComment from "../Icons/Comment";
 
 type PropsPostPreview = {
   post: DataPost;
-  user: DataUser;
+  user?: DataUser;
 };
 
 export default function Post({ post, user }: PropsPostPreview) {
   const [expanded, setExpanded] = useState(false);
   const [commentsPost, setCommentsPost] = useState<DataComment[]>([]);
   const [isLoadingComments, setIsLoadingComments] = useState(false);
-  //const [user, setUser] = useState<DataUser | null>(null);
-
-  /*useEffect(() => {
-    //busca dados do usuario que fez o post
-    getUser(post.userId)
-      .then((value) => {
-        setUser(value);
-      })
-      .catch((error) => {
-        console.error("error ao buscar dados do usuario do post " + error);
-      });
-  }, [post.userId]);
-  */
 
   useEffect(() => {
     setIsLoadingComments(true);

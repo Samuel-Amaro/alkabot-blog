@@ -2,7 +2,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./App.css";
 import Root, { loader as loaderRoot } from "../../routers/Root";
 import Users, {loader as loaderUsers} from "../../routers/Users";
-import User from "../../routers/User";
+import User, {loader as loaderUser} from "../../routers/User";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +18,7 @@ const router = createBrowserRouter([
   {
     path: "/users/:idUser",
     element: <User />,
+    loader: loaderUser,
   },
 ]);
 
