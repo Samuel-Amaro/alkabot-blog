@@ -52,6 +52,7 @@
   border-radius: 5px;
   cursor: pointer;
   font-weight: 400;
+  transition: all 0.35s ease;
 }
 
 .post__btn-comment-text,
@@ -63,6 +64,7 @@
   width: 16px;
   height: 16px;
   fill: #ffffff;
+  transition: all 0.35s ease;
 }
 
 .post__btn-comments:hover,

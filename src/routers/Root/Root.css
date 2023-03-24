@@ -1,10 +1,63 @@
-.main{
-    padding: 0 1.5rem;
+.main {
+  padding: 0 1.5rem;
+}
+
+.main__container {
+  margin: 0 0 1.8rem 0;
+}
+
+.main__buttons-pagination {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+.main__btn {
+  display: flex;
+  appearance: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 400;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 0.7rem 0;
+  width: 140px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  background-color: #555555;
+  border: 2px solid transparent;
+  color: #f4ffff;
+}
+
+.main__btn:hover,
+.main__btn:focus {
+  background-color: transparent;
+  border-color: #555555;
+  color: black;
+}
+
+.main__icon-btn {
+  display: block;
+  width: 16px;
+  height: 16px;
+  fill: #f4ffff;
+  transition: all 0.35s ease;
+}
+
+.main__btn:hover .main__icon-btn,
+.main__btn:focus .main__icon-btn {
+  fill: black;
 }
 
 @media screen and (min-width: 376px) {
-    .main{
-        max-width: 1000px;
-        margin: 0 auto;
-    }
+  .main {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
 }

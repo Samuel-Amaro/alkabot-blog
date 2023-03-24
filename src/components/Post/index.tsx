@@ -70,6 +70,9 @@ export default function Post({ post, user }: PropsPostPreview) {
               setExpanded(!expanded);
             }
           }}
+          onBlur={() => {
+            setExpanded(false);
+          }}
         >
           <span className="post__btn-comment-text">
             {expanded ? "Hidden" : "Show"} comments
