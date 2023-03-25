@@ -73,6 +73,11 @@ export default function Root() {
                 setCurrentPage(currentPage - 1);
               }
             }}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                if (currentPage >= 1) setCurrentPage(currentPage - 1);
+              }
+            }}
             disabled={currentPage === 1}
             title="Previous Posts"
             aria-label="Previous Posts"
@@ -86,6 +91,12 @@ export default function Root() {
             onPointerDown={() => {
               if (currentPage <= Math.ceil(datas.length / postsPerPage)) {
                 setCurrentPage(currentPage + 1);
+              }
+            }}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                if (currentPage <= Math.ceil(datas.length / postsPerPage))
+                  setCurrentPage(currentPage + 1);
               }
             }}
             disabled={currentPage === Math.ceil(datas.length / postsPerPage)}

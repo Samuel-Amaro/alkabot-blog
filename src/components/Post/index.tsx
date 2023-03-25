@@ -1,6 +1,6 @@
 import { DataComment, DataPost, DataUser } from "../../data";
 import React, { useEffect, useState } from "react";
-import { getAllCommentsPost} from "../../api/api";
+import { getAllCommentsPost } from "../../api/api";
 import Comment from "../Comment";
 import "./Post.css";
 import LineDiviser from "../LineDiviser";
@@ -66,8 +66,18 @@ export default function Post({ post, user }: PropsPostPreview) {
             setExpanded(!expanded);
           }}
           onKeyDown={(e) => {
-            if (e.key === " " || e.key === "Enter") {
-              setExpanded(!expanded);
+            switch (e.key) {
+              case " ":
+              case "Enter":
+                setExpanded(!expanded);
+                break;
+              case "Escape":
+                if (expanded) {
+                  setExpanded(false);
+                }
+                break;
+              default:
+                break;
             }
           }}
           onBlur={() => {

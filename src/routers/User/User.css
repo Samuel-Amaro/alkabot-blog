@@ -40,3 +40,10 @@
   line-height: 1.2;
   margin: 0 0 15px 0;
 }
+
+@media screen and (min-width: 376px) {
+    .wrapper__posts-user{
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+}
