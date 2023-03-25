@@ -1,5 +1,5 @@
 .comment__name {
-  color: #212529;
+  color: var(--color-01);
   font-size: 1.25rem;
   margin: 0 0 0.4rem 0;
   font-weight: 500;
@@ -7,8 +7,8 @@
 
 .comment__user {
   display: inline-block;
-  background-color: #ddf4ff;
-  color: #097fe5;
+  background-color: var(--color-03);
+  color: var(--color-04);
   font-size: 0.85rem;
   padding: 0.2rem 0.5rem;
   border-radius: 5px;
@@ -25,7 +25,7 @@
 .comment__content {
   line-height: 1.4;
   font-size: 1rem;
-  color: #1B1B1B;
+  color: var(--color-05);
 }
 
 @media screen and (min-width: 376px) {

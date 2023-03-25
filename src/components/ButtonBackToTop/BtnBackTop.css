@@ -20,17 +20,17 @@
   display: block;
   width: 16px;
   height: 16px;
-  fill: #7f8790;
+  fill: var(--color-019);
 }
 
 .button-backtop:hover,
 .button-backtop:focus {
-  background-color: #f3f4f6;
+  background-color: var(--color-020);
 }
 
 .button-backtop:hover .button-backtop__icon,
 .button-backtop:focus .button-backtop__icon {
-  fill: #24292f;
+  fill: var(--color-07);
 }
 
 .button-backtop--hidden {

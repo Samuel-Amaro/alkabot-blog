@@ -4,6 +4,30 @@
     margin: 0;
 }
 
+:root{
+    /*css variables colors*/
+    --color-01: #212529;
+    --color-02: #dee2e6;
+    --color-03: #ddf4ff;
+    --color-04: #097fe5;
+    --color-05: #1B1B1B;
+    --color-06: #343a40;
+    --color-07: #24292f;
+    --color-08: #ffffff;
+    --color-09: #555555;
+    --color-010: #f4ffff;
+    --color-011: #000000;
+    --color-012: #ffffffb3;
+    --color-013: #ffffffa6;
+    --color-014: #00000033;
+    --color-015: #ece3d0;
+    --color-016: #3e77ff;
+    --color-017: #ddd;
+    --color-018: #f2f2f2;
+    --color-019: #7f8790;
+    --color-020: #f3f4f6;
+}
+
 h1, h2, h3, h4, h5, h6{
     padding: 0;
     margin: 0;

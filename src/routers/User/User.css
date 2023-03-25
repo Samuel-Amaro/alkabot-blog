@@ -6,12 +6,12 @@
   width: auto;
   margin: 0 auto 1.8rem auto;
   border-collapse: collapse;
-  border: 1px solid #ddd;
+  border: 1px solid var(--color-017);
   /*border-radius: 8px;*/
 }
 
 .wrapper__table-row:not(:last-child) {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--color-017);
 }
 
 .wrapper__table-header,
@@ -21,11 +21,11 @@
 }
 
 .wrapper__table-header {
-  border-right: 1px solid #ddd;
-  background-color: #f2f2f2;
+  border-right: 1px solid var(--color-017);
+  background-color: var(--color-018);
   font-size: 1rem;
   font-weight: 500;
-  color: #24292f;
+  color: var(--color-07);
 }
 
 .wrapper__table-data {

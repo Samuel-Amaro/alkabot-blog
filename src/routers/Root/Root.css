@@ -33,16 +33,16 @@
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.35s ease;
-  background-color: #555555;
+  background-color: var(--color-09);
   border: 2px solid transparent;
-  color: #f4ffff;
+  color: var(--color-010);
 }
 
 .main__btn:hover,
 .main__btn:focus {
   background-color: transparent;
-  border-color: #555555;
-  color: black;
+  border-color: var(--color-09);
+  color: var(--color-011);
 }
 
 .main__btn:disabled,
@@ -56,13 +56,13 @@
   display: block;
   width: 16px;
   height: 16px;
-  fill: #f4ffff;
+  fill: var(--color-010);
   transition: all 0.35s ease;
 }
 
 .main__btn:hover .main__icon-btn,
 .main__btn:focus .main__icon-btn {
-  fill: black;
+  fill: var(--color-011);
 }
 
 .main__number {
@@ -70,7 +70,7 @@
   font-size: 1.8rem;
   font-weight: 500;
   line-height: 1.2;
-  color: rgb(36, 41, 47);
+  color: var(--color-07);
   text-align: right;
 }
 
