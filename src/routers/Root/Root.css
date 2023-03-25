@@ -1,9 +1,12 @@
 .main {
-  padding: 0 1.5rem;
+  padding: 0 1rem;
 }
 
 .main__container {
   margin: 0 0 1.8rem 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.5rem 0.5rem;
 }
 
 .main__buttons-pagination {
@@ -42,9 +45,11 @@
   color: black;
 }
 
-.main__btn:disabled, .main__btn:disabled:hover, .main__btn:disabled:focus{
-    opacity: 0.6;
-    cursor: not-allowed;
+.main__btn:disabled,
+.main__btn:disabled:hover,
+.main__btn:disabled:focus {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .main__icon-btn {
@@ -60,9 +65,26 @@
   fill: black;
 }
 
+.main__number {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: rgb(36, 41, 47);
+  text-align: right;
+}
+
+.main__line-diviser--mg {
+  margin: 1.5rem 0 0 0;
+}
+
 @media screen and (min-width: 376px) {
   .main {
     max-width: 1000px;
     margin: 0 auto;
+  }
+
+  .main__number {
+    font-size: 1.4rem;
   }
 }

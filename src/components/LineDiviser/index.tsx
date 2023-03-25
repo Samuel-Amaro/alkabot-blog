@@ -1,5 +1,11 @@
 import "./LineDiviser.css";
 
-export default function LineDiviser() {
-    return (< hr className="line-diviser" />);
+type PropsLineDiviser = {
+  className?: string;
+};
+
+export default function LineDiviser({ className }: PropsLineDiviser) {
+  return (
+    <hr className={className ? `line-diviser ${className}` : "line-diviser"} />
+  );
 }

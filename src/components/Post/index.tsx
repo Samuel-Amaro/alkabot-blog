@@ -10,14 +10,12 @@ import IconComment from "../Icons/Comment";
 type PropsPostPreview = {
   post: DataPost;
   user?: DataUser;
+  className?: string;
   //listAllUsers: DataUser[];
   //isViewMetadatas: boolean;
 };
 
-export default function Post({
-  post,
-  user,
-}: PropsPostPreview) {
+export default function Post({ post, user, className }: PropsPostPreview) {
   const [expanded, setExpanded] = useState(false);
   const [commentsPost, setCommentsPost] = useState<DataComment[]>([]);
   const [isLoadingComments, setIsLoadingComments] = useState(false);
@@ -39,7 +37,7 @@ export default function Post({
 
   return (
     <>
-      <div className="post">
+      <div className={className ? `post ${className}` : "post"}>
         <article className="post__content">
           <h2 className="post__title">{post.title}</h2>
           <p className="post__preview-content">{post.body}</p>

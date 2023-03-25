@@ -55,13 +55,23 @@ export default function Root() {
               if (currentPosts.length - 1 > index) {
                 return (
                   <React.Fragment key={index}>
-                    <Post post={dp} key={index} user={filterUser(dp.userId)} />
-                    <LineDiviser />
+                    <NumberPost numberPost={firstPostIndex + index + 1} />
+                    <div className="main__group">
+                      <Post
+                        post={dp}
+                        key={index}
+                        user={filterUser(dp.userId)}
+                      />
+                      <LineDiviser className="main__line-diviser--mg"/>
+                    </div>
                   </React.Fragment>
                 );
               }
               return (
-                <Post post={dp} key={index} user={filterUser(dp.userId)} />
+                <React.Fragment key={index}>
+                  <NumberPost numberPost={firstPostIndex + index + 1} />
+                  <Post post={dp} key={index} user={filterUser(dp.userId)} />
+                </React.Fragment>
               );
             })
           }
@@ -112,5 +122,17 @@ export default function Root() {
       </main>
       <BackToTop />
     </>
+  );
+}
+
+type PropsNumberPost = {
+  numberPost: number;
+}
+
+export function NumberPost({numberPost} : PropsNumberPost) {
+  return (
+    <div className="main__number-post">
+      <span className="main__number">{numberPost}.</span>
+    </div>
   );
 }
