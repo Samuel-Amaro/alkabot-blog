@@ -9,6 +9,7 @@ import "./Root.css";
 import LineDiviser from "../../components/LineDiviser";
 import AngleRight from "../../components/Icons/AngleRight";
 import AngleLeft from "../../components/Icons/AngleLeft";
+import BackToTop from "../../components/ButtonBackToTop";
 
 export async function loader() {
   const allPosts = await getAllPosts();
@@ -109,6 +110,7 @@ export default function Root() {
           </button>
         </div>
       </main>
+      <BackToTop />
     </>
   );
 }

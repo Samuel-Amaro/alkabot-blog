@@ -1,0 +1,44 @@
+.button-backtop {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  appearance: none;
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  bottom: 80px;
+  right: 16px;
+  z-index: 1100;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.button-backtop__icon {
+  display: block;
+  width: 16px;
+  height: 16px;
+  fill: #7f8790;
+}
+
+.button-backtop:hover,
+.button-backtop:focus {
+  background-color: #f3f4f6;
+}
+
+.button-backtop:hover .button-backtop__icon,
+.button-backtop:focus .button-backtop__icon {
+  fill: #24292f;
+}
+
+.button-backtop--hidden {
+  display: none;
+}
+
+@media screen and (min-width: 430px) {
+  .button-backtop {
+    bottom: 16px;
+  }
+}
