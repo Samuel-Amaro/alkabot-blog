@@ -8,6 +8,7 @@ import LineDiviser from "../../components/LineDiviser";
 import Post from "../../components/Post";
 import React from "react";
 import "./User.css";
+import BackToTop from "../../components/ButtonBackToTop";
 
 export async function loader({ params }: LoaderFunctionArgs) {
   const data = await getUser(parseInt(params.idUser as string));
@@ -109,11 +110,17 @@ export default function User() {
                     </React.Fragment>
                   );
                 }
-                return <Post post={post} key={index} />;
+                return (
+                  <Post
+                    post={post}
+                    key={index}
+                  />
+                );
               })}
           </div>
         </section>
       </main>
+      <BackToTop />
     </>
   );
 }

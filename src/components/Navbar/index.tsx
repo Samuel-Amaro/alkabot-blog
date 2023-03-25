@@ -155,8 +155,8 @@ export default function Navbar() {
               className="navbar__link"
               target="_self"
               rel="next"
-              aria-label="To page Home"
-              title="To page Home"
+              aria-label="To page Posts"
+              title="To page Posts"
               ref={(link) => {
                 const refItems = getRefsItemsMenu();
                 if (link) {
@@ -169,7 +169,7 @@ export default function Navbar() {
                 handleKeyDownItemMenuLink(e);
               }}
             >
-              Home
+              Posts
             </NavLink>
           </li>
           <li className="navbar__item">

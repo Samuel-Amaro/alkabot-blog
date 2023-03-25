@@ -1,8 +1,8 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./App.css";
 import Root, { loader as loaderRoot } from "../../routers/Root";
-import Users, {loader as loaderUsers} from "../../routers/Users";
-import User, {loader as loaderUser} from "../../routers/User";
+import Users, { loader as loaderUsers } from "../../routers/Users";
+import User, { loader as loaderUser } from "../../routers/User";
 
 const router = createBrowserRouter([
   {

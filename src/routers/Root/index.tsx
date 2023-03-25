@@ -51,7 +51,7 @@ export default function Root() {
       <main className="main">
         <div className="main__container">
           {
-            /*datas*/ currentPosts.map((dp, index) => {
+            currentPosts.map((dp, index) => {
               if (currentPosts.length - 1 > index) {
                 return (
                   <React.Fragment key={index}>

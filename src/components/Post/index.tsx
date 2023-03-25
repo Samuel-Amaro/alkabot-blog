@@ -10,9 +10,14 @@ import IconComment from "../Icons/Comment";
 type PropsPostPreview = {
   post: DataPost;
   user?: DataUser;
+  //listAllUsers: DataUser[];
+  //isViewMetadatas: boolean;
 };
 
-export default function Post({ post, user }: PropsPostPreview) {
+export default function Post({
+  post,
+  user,
+}: PropsPostPreview) {
   const [expanded, setExpanded] = useState(false);
   const [commentsPost, setCommentsPost] = useState<DataComment[]>([]);
   const [isLoadingComments, setIsLoadingComments] = useState(false);
@@ -91,7 +96,7 @@ export default function Post({ post, user }: PropsPostPreview) {
         </button>
         {expanded && (
           <div className="post__comments" id="comments-post">
-            <h2 className="post__marck">Comments</h2>
+            <h2 className="post__marck">Comments {commentsPost.length}</h2>
             {isLoadingComments ? (
               <p className="post__loading">Loading comments...</p>
             ) : commentsPost.length > 0 ? (

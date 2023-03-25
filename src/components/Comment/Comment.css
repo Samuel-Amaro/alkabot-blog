@@ -13,13 +13,14 @@
   padding: 0.2rem 0.5rem;
   border-radius: 5px;
   margin: 0 0 0.5rem 0;
-  text-decoration: none;
+  /*text-decoration: none;*/
 }
 
+/*
 .comment__user:hover,
 .comment__user:focus {
   text-decoration: underline;
-}
+}*/
 
 .comment__content {
   line-height: 1.4;
