@@ -1,0 +1,52 @@
+.error {
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1.2rem;
+}
+
+.error__title {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 8px;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  align-items: center;
+  margin: 0 0 0.8rem 0;
+}
+
+.error__icon {
+  display: block;
+  width: 50px;
+  height: 50px;
+}
+
+.error__description,
+.error__message {
+  margin: 0 0 0.8rem 0;
+}
+
+.error__link {
+  display: block;
+  text-decoration: none;
+  background-color: var(--color-03);
+  color: var(--color-04);
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+  margin: 0 0 0.5rem 0;
+  text-decoration: none;
+}
+
+.error__link:hover, .error__link:focus{
+    text-decoration: underline;
+}
+
+@media screen and (min-width: 376px) {
+    .error{
+        padding: 0;
+    }
+}
