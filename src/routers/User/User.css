@@ -1,5 +1,5 @@
 .wrapper__main {
-  padding: 0 1.5rem 1rem 1.5rem;
+  padding: 0 1rem 1rem 1rem;
 }
 
 .wrapper__table-datas-user {
@@ -11,7 +11,7 @@
 }
 
 .wrapper__table-row:not(:last-child) {
-    border-bottom: 1px solid var(--color-017);
+  border-bottom: 1px solid var(--color-017);
 }
 
 .wrapper__table-header,
@@ -41,9 +41,34 @@
   margin: 0 0 15px 0;
 }
 
+.wrapper__list-posts-user {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 0.5rem;
+}
+
+.wrapper__table-link {
+  display: inline-block;
+  background-color: var(--color-03);
+  color: var(--color-04);
+  font-size: 0.85rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.wrapper__table-link:hover,
+.wrapper__table-link:focus {
+  text-decoration: underline;
+}
+
 @media screen and (min-width: 376px) {
-    .wrapper__posts-user{
-        max-width: 1000px;
-        margin: 0 auto;
-    }
+  .wrapper__posts-user {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .wrapper__main {
+    padding: 0 1.5rem 1rem 1.5rem;
+  }
 }

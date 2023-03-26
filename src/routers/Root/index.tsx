@@ -10,6 +10,7 @@ import LineDiviser from "../../components/LineDiviser";
 import AngleRight from "../../components/Icons/AngleRight";
 import AngleLeft from "../../components/Icons/AngleLeft";
 import BackToTop from "../../components/ButtonBackToTop";
+import NumberPost from "../../components/NumberPost";
 
 export async function loader() {
   const allPosts = await getAllPosts();
@@ -122,17 +123,5 @@ export default function Root() {
       </main>
       <BackToTop />
     </>
-  );
-}
-
-type PropsNumberPost = {
-  numberPost: number;
-}
-
-export function NumberPost({numberPost} : PropsNumberPost) {
-  return (
-    <div className="main__number-post">
-      <span className="main__number">{numberPost}.</span>
-    </div>
   );
 }

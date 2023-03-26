@@ -1,0 +1,14 @@
+.main__number {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--color-07);
+  text-align: right;
+}
+
+@media screen and (min-width: 376px) {
+  .main__number {
+    font-size: 1.4rem;
+  }
+}

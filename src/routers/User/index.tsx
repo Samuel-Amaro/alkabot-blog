@@ -9,6 +9,7 @@ import Post from "../../components/Post";
 import React from "react";
 import "./User.css";
 import BackToTop from "../../components/ButtonBackToTop";
+import NumberPost from "../../components/NumberPost";
 
 export async function loader({ params }: LoaderFunctionArgs) {
   const data = await getUser(parseInt(params.idUser as string));
@@ -57,17 +58,37 @@ export default function User() {
             </tr>
             <tr className="wrapper__table-row">
               <th className="wrapper__table-header">E-mail</th>
-              <td className="wrapper__table-data">{user.email}</td>
+              <td className="wrapper__table-data">
+                <a
+                  href={`mailto:${user.email}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="wrapper__table-link"
+                  aria-label={`Visit email from user ${user.name}`}
+                >
+                  {user.email}
+                </a>
+              </td>
             </tr>
             <tr className="wrapper__table-row">
               <th className="wrapper__table-header">Phone</th>
-              <td className="wrapper__table-data">{user.phone}</td>
+              <td className="wrapper__table-data">
+                <a
+                  href={`tel:${user.phone}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="wrapper__table-link"
+                  aria-label={`Visit phone from user ${user.name}`}
+                >
+                  {user.phone}
+                </a>
+              </td>
             </tr>
             <tr className="wrapper__table-row">
               <th className="wrapper__table-header">Website</th>
               <td className="wrapper__table-data">
                 <a
-                  href={`${user.website}`}
+                  href={`/${user.website}`}
                   target="_blank"
                   rel="noreferrer"
                   className="wrapper__table-link"
@@ -105,16 +126,19 @@ export default function User() {
                 ) {
                   return (
                     <React.Fragment key={index}>
-                      <Post post={post} key={index} />
-                      <LineDiviser />
+                      <NumberPost numberPost={index + 1} />
+                      <div className="wrapper__group">
+                        <Post post={post} key={index} />
+                        <LineDiviser />
+                      </div>
                     </React.Fragment>
                   );
                 }
                 return (
-                  <Post
-                    post={post}
-                    key={index}
-                  />
+                  <React.Fragment key={index}>
+                    <NumberPost numberPost={index + 1} />
+                    <Post post={post} key={index} />
+                  </React.Fragment>
                 );
               })}
           </div>

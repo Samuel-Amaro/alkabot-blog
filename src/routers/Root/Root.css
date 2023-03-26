@@ -65,15 +65,6 @@
   fill: var(--color-011);
 }
 
-.main__number {
-  display: block;
-  font-size: 1.8rem;
-  font-weight: 500;
-  line-height: 1.2;
-  color: var(--color-07);
-  text-align: right;
-}
-
 .main__line-diviser--mg {
   margin: 1.5rem 0 0 0;
 }
