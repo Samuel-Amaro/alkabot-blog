@@ -10,12 +10,13 @@ comentários associados.
 ## Tabela de conteúdos
 
 - [Visão Geral](#visão-geral)
- - [Tarefa](#a-tarefa)
- - [PrintScreens](#print-screens)
- - [Links](#links)
+  - [Tarefa](#a-tarefa)
+  - [PrintScreens](#print-screens)
+  - [Links](#links)
 - [Process](#processo)
- - [Construido Com](#construido-com)
+  - [Construido Com](#construido-com)
 - [Instalação e Execução da aplicação](#instalação-e-execução-do-projeto)
+- [Deploy e Build](#deploy-e-build-para-github-pages)
 
 ## Visão Geral
 
@@ -52,8 +53,8 @@ o https://jsonplaceholder.typicode.com/users/[ID]
 
 ### Links
 
- - URL Repositório: [Repositorio Projeto]()
- - Url Aplicação: [Resultado Aplicação]()
+ - URL Repositório: [Repositorio Projeto](https://github.com/Samuel-Amaro/alkabot-blog)
+ - Url Aplicação: [Resultado Aplicação](https://samuel-amaro.github.io/alkabot-blog/)
 
 ## Processo
 
@@ -168,4 +169,80 @@ Em seguida, adicione `"prettier"` à matriz "extends" em seu `.eslintrc.*` arqui
     "prettier"
   ]
 }
+```
+
+## Deploy e Build Para GitHub Pages 
+
+Deploy e build para produção no GitHub Pages.
+
+### Envie seu código para o repositório GitHub
+
+Execute os seguintes comandos no seu Terminal
+
+```sh 
+  $ git init
+```
+```sh 
+$ git add .
+```
+```sh 
+$ git commit -m "first commit"
+```
+```sh 
+$ git branch -M main
+```
+```sh 
+$ git remote add origin http://github.com/username/repo-name.git
+```
+```sh 
+$ git push -u origin main
+``` 
+
+Agora, você poderá ver seu código em seu repositório.
+
+### Deployment (Static)
+
+1. Vá para o seu ```vite.config.js``` arquivo. E adicione seu URL base a ele.
+
+```javascript
+export default defineConfig({
+  plugins: [react()],
+  base: "/repo-name/" //Aqui e o url base do website
+})
+```
+
+2. Instalar package GitHub pages
+
+```sh
+npm install gh-pages --save-dev
+``` 
+
+3. adicionar à ```package.json```
+
+```json
+"homepage": "https://<username>.github.io/<repo>/",
+...
+"scripts": {
+...
+  "build": "vite build",
+  "predeploy": "npm run build", //add esse script
+  "deploy": "gh-pages -d dist", //add esse script
+  ...
+```
+
+4. Opcional - Se for uma aplicação SPA - Single Page Apps for GitHub Pages usando react-router-dom
+
+  * Copie o [404.html](https://github.com/rafgraph/spa-github-pages/blob/gh-pages/404.html) arquivo para o seu repositório como está.
+
+    * Observe que, se você estiver configurando um site do Project Pages e não estiver usando um domínio personalizado (ou seja, o endereço do seu site é username.github.io/repo-name), será necessário definir pathSegmentsToKeep como 1 no 404.html arquivo para manter /repo-name o caminho após o redirecionamento. Se você estiver usando o React Router, precisará dizer a ele para usar o repo-name como o basename, por exemplo 
+    ```jsx
+      <BrowserRouter basename="/repo-name" />
+    ```
+
+  * Copie o [script de redirecionamento](https://github.com/rafgraph/spa-github-pages/blob/gh-pages/index.html#L21-L42) do ```index.html``` arquivo e adicione-o ao seu ```index.html``` arquivo - Observe que o script de redirecionamento deve ser colocado antes do script do aplicativo de página única em seu ```index.html``` arquivo.  
+
+5. Por fim execute o comando
+
+```sh
+npm run deploy
 ```
