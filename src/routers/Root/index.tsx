@@ -51,43 +51,38 @@ export default function Root() {
       />
       <main className="main">
         <div className="main__container">
-          {
-            currentPosts.map((dp, index) => {
-              if (currentPosts.length - 1 > index) {
-                return (
-                  <React.Fragment key={index}>
-                    <NumberPost numberPost={firstPostIndex + index + 1} />
-                    <div className="main__group">
-                      <Post
-                        post={dp}
-                        key={index}
-                        user={filterUser(dp.userId)}
-                      />
-                      <LineDiviser className="main__line-diviser--mg"/>
-                    </div>
-                  </React.Fragment>
-                );
-              }
+          {currentPosts.map((dp, index) => {
+            if (currentPosts.length - 1 > index) {
               return (
                 <React.Fragment key={index}>
                   <NumberPost numberPost={firstPostIndex + index + 1} />
-                  <Post post={dp} key={index} user={filterUser(dp.userId)} />
+                  <div className="main__group">
+                    <Post post={dp} key={index} user={filterUser(dp.userId)} />
+                    <LineDiviser className="main__line-diviser--mg" />
+                  </div>
                 </React.Fragment>
               );
-            })
-          }
+            }
+            return (
+              <React.Fragment key={index}>
+                <NumberPost numberPost={firstPostIndex + index + 1} />
+                <Post post={dp} key={index} user={filterUser(dp.userId)} />
+              </React.Fragment>
+            );
+          })}
         </div>
         <div className="main__buttons-pagination">
           <button
             type="button"
             onPointerDown={() => {
-              if (currentPage >= 1) {
-                setCurrentPage(currentPage - 1);
+              if (currentPage > 1) {
+                setCurrentPage((prevCurrentPage) => prevCurrentPage - 1);
               }
             }}
             onKeyDown={(e) => {
               if (e.key === "Enter" || e.key === " ") {
-                if (currentPage >= 1) setCurrentPage(currentPage - 1);
+                if (currentPage > 1)
+                  setCurrentPage((prevCurrentPage) => prevCurrentPage - 1);
               }
             }}
             disabled={currentPage === 1}
@@ -101,14 +96,14 @@ export default function Root() {
           <button
             type="button"
             onPointerDown={() => {
-              if (currentPage <= Math.ceil(datas.length / postsPerPage)) {
-                setCurrentPage(currentPage + 1);
+              if (currentPage < Math.ceil(datas.length / postsPerPage)) {
+                setCurrentPage((prevCurrentPage) => prevCurrentPage + 1);
               }
             }}
             onKeyDown={(e) => {
               if (e.key === "Enter" || e.key === " ") {
-                if (currentPage <= Math.ceil(datas.length / postsPerPage))
-                  setCurrentPage(currentPage + 1);
+                if (currentPage < Math.ceil(datas.length / postsPerPage))
+                  setCurrentPage((prevCurrentPage) => prevCurrentPage + 1);
               }
             }}
             disabled={currentPage === Math.ceil(datas.length / postsPerPage)}

@@ -33,7 +33,7 @@ export default function CardProfile({ user }: PropsCardProfile) {
       </p>
       <div className="cardprofile__contacts">
         <a
-          href={user.website}
+          href={user.website.startsWith("https://" || "http://") ? user.website : `https://${user.website}`}
           target="_blank"
           rel="noopener noreferrer"
           aria-label={`visit website user ${user.username}`}

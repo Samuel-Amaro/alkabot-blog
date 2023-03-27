@@ -88,7 +88,7 @@ export default function User() {
               <th className="wrapper__table-header">Website</th>
               <td className="wrapper__table-data">
                 <a
-                  href={`/${user.website}`}
+                  href={user.website.startsWith("https://" || "http://") ? user.website : `https://${user.website}`}
                   target="_blank"
                   rel="noreferrer"
                   className="wrapper__table-link"
